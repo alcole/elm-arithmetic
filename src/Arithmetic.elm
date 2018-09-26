@@ -30,6 +30,7 @@ module Arithmetic
         , primesBelow
         , primeFactors
         , primeExponents
+        , abs
         )
 
 {-| A library that provides useful number-theoretical functions for dealing
@@ -703,3 +704,12 @@ primeExponents =
                         (( x, 1 ) :: ( y, n ) :: rest)
     in
         primeFactors >> List.foldr runLengthCons []
+
+        
+{- Absolute Value -}
+
+
+abs : Int -> Int
+abs n =
+    if n < 0 then n * -1
+    else n
